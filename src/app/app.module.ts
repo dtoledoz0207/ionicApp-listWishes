@@ -14,6 +14,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {PendientesPage} from '../pages/pendientes/pendientes.component';
 import {TerminadosPage} from '../pages/terminados/terminados.component';
 
+// Servicios
+import {DeseosService} from '../services/deseos.service';
+
 
 
 @NgModule({
@@ -37,6 +40,7 @@ import {TerminadosPage} from '../pages/terminados/terminados.component';
   providers: [
     StatusBar,
     SplashScreen,
+    DeseosService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
