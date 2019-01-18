@@ -26,14 +26,22 @@
             Tareas por hacer
         </ion-list-header>
 
-        <button ion-item detail-none 
-                class="animated fadeInDown" 
-                *ngFor="let item of lista.items"
+        <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
+            <button ion-item detail-none  
                 (click)="actualizarTarea(item)">
-            <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
-            <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
-            {{item.desc}}
-        </button>
+                    <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
+                    <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
+                    {{item.desc}}
+            </button>
+
+            <ion-item-options side="right">
+                    <button ion-button icon-only color="danger" (click)="borrar(i)">
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+        
     </ion-list>
 
 
