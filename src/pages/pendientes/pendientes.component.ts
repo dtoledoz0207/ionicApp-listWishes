@@ -23,6 +23,12 @@ export class PendientesPage{
         this.navCtrl.push(AgregarPage, {titulo: lista.titulo, lista: lista});
     }
 
+
+    borrarLista(lista: Lista){
+        this.deseosService.borrarLista(lista);
+    }
+
+
     agregarLista(){
         //this.navCtrl.push(AgregarPage);
 
